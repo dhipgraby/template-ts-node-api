@@ -12,7 +12,7 @@ export const useAlchemy = (_network: Network) => {
     const getNftsForOwner = async (address: `${string}`): Promise<OwnedNftsResponse | null> => {
         try {
             const _nftsForOwner = await alchemy.nft.getNftsForOwner(address);
-            console.log("useAlchemy:getNftsForOwner:success", { _nftsForOwner });
+            // console.log("useAlchemy:getNftsForOwner:success", { _nftsForOwner });
             return _nftsForOwner;
         } catch (error) {
             console.log("useAlchemy:getNftsForOwner:error", { error });
