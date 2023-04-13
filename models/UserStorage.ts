@@ -10,7 +10,7 @@ class UserStorage {
         return user;
     }
 
-    async getUserById(userId: string): Promise<User | undefined> {
+    async getUserById(userId: number): Promise<User | undefined> {
         const user = this.users.find(user => user.id === userId);
         return user;
     }
@@ -23,7 +23,7 @@ class UserStorage {
         return this.users.find(user => user.wallet === wallet);
     }
 
-    async updateUserWallet(userId: number, newBalance: number): Promise<void> {
+    async updateUserBalance(userId: number, newBalance: number): Promise<void> {
         const userIndex = this.users.findIndex((user) => user.id === userId);
         if (userIndex !== -1) {
             this.users[userIndex].balance = newBalance;
