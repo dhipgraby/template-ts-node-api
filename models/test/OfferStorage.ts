@@ -1,4 +1,4 @@
-import { Offer, OfferStatus } from "./Offer";
+import { Offer, OfferStatus } from "../../types/Offer";
 
 class OfferStorage {
   private offers: Offer[] = [];

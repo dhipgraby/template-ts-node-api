@@ -1,6 +1,6 @@
 import request from "supertest";
 import app from "../src/app";
-import { getNftsForOwner } from "../src/controllers/api";
+import { getNftsForOwner } from "../src/controllers/test/api";
 
 describe("GET /api/wallets/:walletAddress/nfts", () => {
     it("should return NFTs for a given wallet", async () => {

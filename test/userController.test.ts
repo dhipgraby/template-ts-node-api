@@ -1,7 +1,7 @@
 
 import request from "supertest";
 import app from "../src/app";
-import { userStorage } from "../models/UserStorage";
+import { userStorage } from "../models/test/UserStorage";
 
 describe("User Registration", () => {
     beforeEach(() => {
@@ -21,7 +21,7 @@ describe("User Registration", () => {
     });
 
     test("Attempt to register with an existing username", async () => {
-        await userStorage.createUser({
+        userStorage.createUser({
             id: 1,
             username: "existinguser",
             wallet: "0x12345",
@@ -45,7 +45,7 @@ describe("User Registration", () => {
             wallet: "0x12345",
             registrationDate: new Date(),
             password: "existingpass",
-            balance:5000
+            balance: 5000
         });
 
         const response = await request(app)

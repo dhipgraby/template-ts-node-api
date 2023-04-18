@@ -1,9 +1,9 @@
 import request from "supertest";
 import app from "../src/app";
 import { cardStorage } from "../models/test/CardStorage";
-import { userStorage } from "../models/UserStorage";
+import { userStorage } from "../models/test/UserStorage";
 
-jest.mock("../models/UserStorage", () => {
+jest.mock("../models/test/UserStorage", () => {
     console.log('creating new user');
     
   const actualUserStorage = jest.requireActual("../models/UserStorage");
@@ -25,7 +25,7 @@ jest.mock("../models/UserStorage", () => {
   };
 });
 
-jest.mock("../models/CardStorage", () => {
+jest.mock("../models/test/CardStorage", () => {
   const actualCardStorage = jest.requireActual("../models/CardStorage");
   return {
     ...actualCardStorage,

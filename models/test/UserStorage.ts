@@ -1,6 +1,4 @@
-// models/UserStorage.ts
-
-import { User } from "./User";
+import { User } from "../../types/User";
 
 class UserStorage {
     private users: User[] = [];

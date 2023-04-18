@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { offerStorage } from "../../models/test/OfferStorage";
-import { cardStorage } from "../../models/test/CardStorage";
-import { userStorage } from "../../models/UserStorage";
+import { offerStorage } from "../../../models/test/OfferStorage";
+import { cardStorage } from "../../../models/test/CardStorage";
+import { userStorage } from "../../../models/test/UserStorage";
 
 export const sendOffer = async (req: Request, res: Response): Promise<void> => {
     const { cardId, buyerId, sellerId, price } = req.body;

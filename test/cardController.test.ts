@@ -1,11 +1,11 @@
 import request from "supertest";
 import app from "../src/app";
 import { cardStorage } from "../models/test/CardStorage";
-import { userStorage } from "../models/UserStorage";
-import { registerUser } from "../src/controllers/userController";
-import { buyCard } from "../src/controllers/cardController";
+import { userStorage } from "../models/test/UserStorage";
+import { registerUser } from "../src/controllers/test/userController";
+import { buyCard } from "../src/controllers/test/cardController";
 
-jest.mock("../models/UserStorage", () => {
+jest.mock("../models/test/UserStorage", () => {
     return {
         userStorage: {
             getUserById: (userId: string) => ({
@@ -21,7 +21,7 @@ jest.mock("../models/UserStorage", () => {
     };
 });
 
-jest.mock("../models/CardStorage", () => {
+jest.mock("../models/test/CardStorage", () => {
     return {
         cardStorage: {
             getCardById: (cardId: string) => ({

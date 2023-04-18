@@ -37,6 +37,10 @@ export const loadApiEndpoints = (app: Application): void => {
    *                 type: string
    *               password:
    *                 type: string
+   *               wallet:
+   *                 type: string
+   *               balance:
+   *                 type: integer
    *     responses:
    *       200:
    *         description: User registration successful

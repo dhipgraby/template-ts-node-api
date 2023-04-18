@@ -1,13 +1,13 @@
 import request from "supertest";
 import app from "../src/app";
-import { offerStorage } from "../models/OfferStorage";
-import { userStorage } from "../models/UserStorage";
+import { offerStorage } from "../models/test/OfferStorage";
+import { userStorage } from "../models/test/UserStorage";
 import { cardStorage } from "../models/test/CardStorage";
 
 // Mock the UserStorage, CardStorage, and OfferStorage
-jest.mock("../models/UserStorage");
-jest.mock("../models/CardStorage");
-jest.mock("../models/OfferStorage");
+jest.mock("../models/test/UserStorage");
+jest.mock("../models/test/CardStorage");
+jest.mock("../models/test/OfferStorage");
 
 // Prepare the mocked data for users, cards, and offers
 const mockedUserStorage = userStorage as jest.Mocked<typeof userStorage>;
