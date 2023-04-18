@@ -12,7 +12,7 @@ export const swaggerOptions = {
             },
         ],
     },
-    apis: ["./src/controllers/*.ts"], // Change this path to match the location of your API route files
+    apis: ["./src/controllers/routes/*.ts"], // Change this path to match the location of your API route files
 };
 
 export default swaggerOptions;
