@@ -2,7 +2,7 @@ import request from "supertest";
 import app from "../src/app";
 import { offerStorage } from "../models/OfferStorage";
 import { userStorage } from "../models/UserStorage";
-import { cardStorage } from "../models/CardStorage";
+import { cardStorage } from "../models/test/CardStorage";
 
 // Mock the UserStorage, CardStorage, and OfferStorage
 jest.mock("../models/UserStorage");

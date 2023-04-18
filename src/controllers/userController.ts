@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { User } from "../../models/User";
+import { User } from "../../types/User";
 import { userStorage } from "../../models/UserStorage";
 
 export const registerUser = (req: Request, res: Response): void => {

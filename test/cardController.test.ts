@@ -1,6 +1,6 @@
 import request from "supertest";
 import app from "../src/app";
-import { cardStorage } from "../models/CardStorage";
+import { cardStorage } from "../models/test/CardStorage";
 import { userStorage } from "../models/UserStorage";
 import { registerUser } from "../src/controllers/userController";
 import { buyCard } from "../src/controllers/cardController";

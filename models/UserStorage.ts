@@ -1,34 +1,24 @@
 // models/UserStorage.ts
+import { PrismaClient, User } from "@prisma/client";
 
-import { User } from "./User";
+export class UserStorage {
+  private prisma: PrismaClient;
 
-class UserStorage {
-    private users: User[] = [];
+  constructor() {
+    this.prisma = new PrismaClient();
+  }
 
-    public createUser(user: User): User {
-        this.users.push(user);
-        return user;
-    }
+  async getUserByUsername(username: string): Promise<User | null> {
+    return await this.prisma.user.findUnique({ where: { username } });
+  }
 
-    async getUserById(userId: number): Promise<User | undefined> {
-        const user = this.users.find(user => user.id === userId);
-        return user;
-    }
+  async getUserByWallet(wallet: string): Promise<User | null> {
+    return await this.prisma.user.findUnique({ where: { wallet } });
+  }
 
-    public getUserByUsername(username: string): User | undefined {
-        return this.users.find(user => user.username === username);
-    }
-
-    public getUserByWallet(wallet: string): User | undefined {
-        return this.users.find(user => user.wallet === wallet);
-    }
-
-    async updateUserBalance(userId: number, newBalance: number): Promise<void> {
-        const userIndex = this.users.findIndex((user) => user.id === userId);
-        if (userIndex !== -1) {
-            this.users[userIndex].balance = newBalance;
-        }
-    }
+  async createUser(user: User): Promise<User> {
+    return await this.prisma.user.create({ data: user });
+  }
 }
 
 export const userStorage = new UserStorage();

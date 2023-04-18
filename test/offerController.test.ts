@@ -1,6 +1,6 @@
 import request from "supertest";
 import app from "../src/app";
-import { cardStorage } from "../models/CardStorage";
+import { cardStorage } from "../models/test/CardStorage";
 import { userStorage } from "../models/UserStorage";
 
 jest.mock("../models/UserStorage", () => {

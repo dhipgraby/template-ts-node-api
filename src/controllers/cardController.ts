@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { cardStorage } from "../../models/CardStorage";
+import { cardStorage } from "../../models/test/CardStorage";
 import { User, userStorage } from "./userController";
 
 export const buyCard = async (req: Request, res: Response) => {
