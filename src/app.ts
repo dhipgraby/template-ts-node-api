@@ -6,6 +6,7 @@ import { loadApiEndpoints } from "./controllers/api";
 import { loadTestApiEndpoints } from "./controllers/test/api";
 import swaggerOptions from "../swaggerOptions";
 import loadSwagger from '../swagger';
+import YAML from 'yamljs';
 
 interface SwaggerSpecWithPaths extends swaggerJSDoc.SwaggerDefinition {
     paths: Record<string, any>;
@@ -22,10 +23,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../public"), { maxAge: 31557600000 }));
 
 // Swagger setup
-const swaggerSpec = swaggerJSDoc(swaggerOptions) as SwaggerSpecWithPaths;
-swaggerSpec.paths = loadSwagger().paths;
+// const swaggerSpec = swaggerJSDoc(swaggerOptions) as SwaggerSpecWithPaths;
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+const swaggerDocument = YAML.load('./swagger.yaml');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+// Serve static files
+app.use(express.static(path.join(__dirname, '..', 'swagger-ui')));
+
+// swaggerSpec.paths = loadSwagger().paths;
+
+// app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 (process.env.RUN_PROD_ENV === "true") ? loadApiEndpoints(app) : loadTestApiEndpoints(app)
 
