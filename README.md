@@ -45,7 +45,7 @@ The Nft Marketplace Simulator is a simple MVP (Minimum Viable Product) for a car
 
 ## 📝 API Documentation
 
-The API documentation can be found in the `swagger` folder of the project. To view the documentation, open the `index.html` file in a browser.
+The API documentation can be found in the `swagger` folder of the project. To view the documentation, open the `http://localhost:3000/api-docs/` file in a browser.
 
 ## 🧪 Testing
 
