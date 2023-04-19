@@ -1,5 +1,4 @@
 import fs from 'fs';
-import YAML from 'yamljs';
 import { join } from 'path';
 
 type SwaggerDoc = {
@@ -11,16 +10,16 @@ interface SwaggerDocWithOpenApi extends SwaggerDoc {
 }
 
 const files = [
-    'welcome.yaml',
-    'getUserById.yaml',
-    'register.yaml',
-    'getOfferById.yaml',
-    'offers.yaml',
-    'getAllCardsByUser.yaml',
-    'getCardById.yaml',
-    'createCard.yaml',
-    'buyCard.yaml',
-    'nfts.yaml'
+    'welcome.json',
+    'getUserById.json',
+    'register.json',
+    'getOfferById.json',
+    'offers.json',
+    'getAllCardsByUser.json',
+    'getCardById.json',
+    'createCard.json',
+    'buyCard.json',
+    'nfts.json'
 ];
 
 const swaggerDir = join(__dirname, '..', 'swagger');
@@ -28,7 +27,7 @@ const swaggerDir = join(__dirname, '..', 'swagger');
 const loadSwagger = (): SwaggerDocWithOpenApi => {
     const swaggerDocs: SwaggerDoc[] = files.map((file) => {
         const contents = fs.readFileSync(join(swaggerDir, file), 'utf-8');
-        return YAML.parse(contents) as SwaggerDoc;
+        return JSON.parse(contents) as SwaggerDoc;
     });
 
     const mergedSwagger = swaggerDocs.reduce((acc: SwaggerDoc, doc: SwaggerDoc) => {
