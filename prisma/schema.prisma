@@ -20,7 +20,7 @@ model Offer {
   buyerId  Int
   sellerId Int
   price    Float
-  status   String      @default("pending")  
+  status   String @default("pending")
 }
 
 model User {

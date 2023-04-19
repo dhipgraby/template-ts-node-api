@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { Card } from "../types/Card";
 
-export class CardStorage {
+class CardStorage {
 
   private prisma: PrismaClient;
 
@@ -18,6 +18,14 @@ export class CardStorage {
     return await this.prisma.card.findUnique({
       where: {
         id: cardId,
+      },
+    });
+  }
+
+  async getAllCardsByUser(userId: number): Promise<Card[]> {
+    return await this.prisma.card.findMany({
+      where: {
+        owner: userId,
       },
     });
   }

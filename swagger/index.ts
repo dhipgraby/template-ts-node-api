@@ -8,10 +8,14 @@ type SwaggerDoc = {
 
 const files = [
     'welcome.yaml',
+    'getUserById.yaml',
     'register.yaml',
+    'getOfferById.yaml',
+    'offers.yaml',
+    'getAllCardsByUser.yaml',
+    'getCardById.yaml',
     'createCard.yaml',
     'buyCard.yaml',
-    'offers.yaml',
     'nfts.yaml'
 ];
 

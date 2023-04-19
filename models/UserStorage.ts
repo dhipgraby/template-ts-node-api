@@ -1,6 +1,7 @@
-import { PrismaClient, User } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+import { User, NewUser } from "../types/User";
 
-export class UserStorage {
+class UserStorage {
   private prisma: PrismaClient;
 
   constructor() {
@@ -9,7 +10,7 @@ export class UserStorage {
 
   async getUserById(userId: number): Promise<User | null> {
     return await this.prisma.user.findUnique({ where: { id: userId } });
-  }  
+  }
 
   async getUserByUsername(username: string): Promise<User | null> {
     return await this.prisma.user.findUnique({ where: { username } });
@@ -19,7 +20,7 @@ export class UserStorage {
     return await this.prisma.user.findUnique({ where: { wallet } });
   }
 
-  async createUser(user: User): Promise<User> {
+  async createUser(user: NewUser): Promise<NewUser> {
     return await this.prisma.user.create({ data: user });
   }
 
@@ -29,7 +30,7 @@ export class UserStorage {
       data: { balance: newBalance }
     });
   }
-  
+
 }
 
 export const userStorage = new UserStorage();

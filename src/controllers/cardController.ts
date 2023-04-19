@@ -49,4 +49,16 @@ export const getCardById = async (req: Request, res: Response) => {
     return res.status(200).send({ card });
 };
 
-
+// cardController.ts
+export const getAllCardsByUser = async (req: Request, res: Response) => {
+    const userId = parseInt(req.params.userId, 10);
+  
+    const user = await userStorage.getUserById(userId);
+    if (!user) {
+      return res.status(404).send({ message: "User not found" });
+    }
+  
+    const cards = await cardStorage.getAllCardsByUser(userId);
+    res.status(200).send({ cards });
+  };
+  

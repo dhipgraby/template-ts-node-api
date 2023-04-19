@@ -13,10 +13,10 @@ const { getNftsForOwner } = useAlchemy(Network.MATIC_MUMBAI);
 export const loadApiEndpoints = (app: Application): void => {
   welcomeRoute(app);
   registerRoute(app);
+  createCardRoute(app);
   buyCardRoute(app);
   offersRoute(app);
-  nftsRoute(app);
-  createCardRoute(app);
+  nftsRoute(app);  
 };
 
 export { getNftsForOwner }; // Export

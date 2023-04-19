@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { offerStorage } from "../../models/test/OfferStorage";
-import { cardStorage } from "../../models/test/CardStorage";
+import { offerStorage } from "../../models/OfferStorage";
+import { cardStorage } from "../../models/CardStorage";
 import { userStorage } from "../../models/UserStorage";
 
 export const sendOffer = async (req: Request, res: Response): Promise<void> => {
@@ -83,3 +83,15 @@ export const declineOffer = async (req: Request, res: Response): Promise<void> =
 
     res.status(200).send({ message: "Offer declined successfully" });
 };
+
+export const getOfferById = async (req: Request, res: Response): Promise<void> => {
+    const offerId = parseInt(req.params.offerId, 10);
+  
+    const offer = await offerStorage.getOfferById(offerId);
+    if (!offer) {
+      res.status(404).send({ message: "Offer not found" });
+      return;
+    }
+  
+    res.status(200).send({ offer });
+  };

@@ -6,5 +6,5 @@ export interface Offer {
   buyerId: number;
   sellerId: number;
   price: number;
-  status: OfferStatus;
+  status: string;
 }

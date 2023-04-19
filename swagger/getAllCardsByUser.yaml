@@ -1,0 +1,36 @@
+
+paths:
+  # ...
+  /api/users/{userId}/cards:
+    get:
+      tags:
+        - Cards
+      summary: Get all cards by user ID
+      description: Retrieve all cards owned by a user
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: integer
+          description: The user ID
+      responses:
+        200:
+          description: A list of cards owned by the user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cards:
+                    type: array                    
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "User not found"
