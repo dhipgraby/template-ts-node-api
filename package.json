@@ -10,7 +10,8 @@
     "lint": "eslint --ignore-path .gitignore . --ext .ts",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest --verbose",
-    "generate-api": "swagger-typescript-api -p ./swagger.yaml -o ./src/apiClient"
+    "generate-api": "swagger-typescript-api -p ./swagger.yaml -o ./src/apiClient",
+    "serve-swagger": "serve -s swagger-ui -p $PORT"
   },
   "author": "",
   "license": "ISC",
@@ -40,6 +41,7 @@
     "@types/swagger-jsdoc": "^6.0.1",
     "alchemy-sdk": "^2.7.0",
     "express": "^4.17.2",
+    "serve": "^14.2.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^4.6.2"
   }
