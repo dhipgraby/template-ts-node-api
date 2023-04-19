@@ -16,8 +16,8 @@
       "dest": "src/server.ts"
     },
     {
-      "src": "/api-docs",
-      "dest": "swagger-ui/index.html"
+      "src": "/api-docs/(.*)",
+      "dest": "swagger-ui/$1"
     }
   ]
 }
