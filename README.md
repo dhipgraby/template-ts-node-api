@@ -11,12 +11,14 @@ The Nft Marketplace Simulator is a simple MVP (Minimum Viable Product) for a car
 
 ## 📁 Project Structure
 
-hooks
-models
+
+<pre>
+    hooks
+    models
     ├── db models and test models
-prisma
+    prisma
     ├── database
-src
+    src
     ├── controllers
     │    ├── cardController.ts
     │    ├── userController.ts
@@ -25,10 +27,12 @@ src
     │    ├── all app routes
     ├── test
     │    ├── test folder for running jest containing also test controllers
-swagger
+    swagger
     ├── swagger implementation files
-test
+    test
     ├── all tests written in jest
+</pre>
+
 
 ## 💻 Getting Started
 
