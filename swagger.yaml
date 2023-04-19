@@ -32,3 +32,4 @@ paths:
           description: User registered successfully
         '400':
           description: Invalid request payload
+  # Add other paths for your API endpoints
