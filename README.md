@@ -37,10 +37,11 @@ The Nft Marketplace Simulator is a simple MVP (Minimum Viable Product) for a car
 
 1. Clone the repository to your local machine.
 2. Install the dependencies using `npm install` or `yarn`.
-3. Create a `.env` file in the root folder of the project and configure the required environment variables.
-4. To run tests, change the `RUN_PROD_ENV` variable to `false` in the `.env` file.
-5. Run the development server using `npm run dev` or `yarn dev`.
-6. Open your browser and navigate to `http://localhost:3000` to access the application.
+4. Set up the database by running `npx prisma generate` and right after `npx prisma migrate dev --preview-feature`.
+5. Create a `.env` file in the root folder of the project and configure the required environment variables.
+6. To run tests, change the `RUN_PROD_ENV` variable to `false` in the `.env` file.
+7. Run the development server using `npm run dev` or `yarn dev`.
+8. Open your browser and navigate to `http://localhost:3000` to access the application.
 
 ## 📝 API Documentation
 
