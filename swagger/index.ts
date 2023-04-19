@@ -23,7 +23,7 @@ const files = [
     'nfts.yaml'
 ];
 
-const swaggerDir = join(__dirname, './');
+const swaggerDir = join(__dirname, '..', 'swagger');
 
 const loadSwagger = (): SwaggerDocWithOpenApi => {
     const swaggerDocs: SwaggerDoc[] = files.map((file) => {
