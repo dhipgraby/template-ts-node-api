@@ -4,7 +4,6 @@ The Nft Marketplace Simulator is a simple MVP (Minimum Viable Product) for a car
 
 ## 🚀 Technologies
 
-- Next.js
 - TypeScript
 - Express
 - Prisma
