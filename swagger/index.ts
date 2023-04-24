@@ -12,14 +12,7 @@ interface SwaggerDocWithOpenApi extends SwaggerDoc {
 const files = [
     'welcome.json',
     'getUserById.json',
-    'register.json',
-    'getOfferById.json',
-    'offers.json',
-    'getAllCardsByUser.json',
-    'getCardById.json',
-    'createCard.json',
-    'buyCard.json',
-    'nfts.json'
+    'register.json',    
 ];
 
 const swaggerDir = join(__dirname, '..', 'swagger');

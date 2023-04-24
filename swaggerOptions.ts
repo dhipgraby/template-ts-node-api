@@ -2,9 +2,9 @@ export const swaggerOptions = {
     definition: {
         openapi: "3.0.0",
         info: {
-            title: "NFT Marketplace Simulator API",
+            title: "Base Api",
             version: "1.0.0",
-            description: "A marketplace API",
+            description: "Base Api",
         },
         servers: [
             {

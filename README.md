@@ -1,6 +1,6 @@
-# 🌟 Nft Marketplace Simulator 🌟
+# 🌟 Base Api - Ready to Build 🌟
 
-The Nft Marketplace Simulator is a simple MVP (Minimum Viable Product) for a card collection platform. Users can buy cards with predefined prices, and once they own the cards, other users can make offers for these cards. The card owner can then decide whether to accept or decline the offer.
+Base Api structure with Database. Ready to implement methods, routes and controllers with good practices. Includes tests folder with basic endpoints. Change .env RUN_PROD_ENV to false to run tests.
 
 ## 🚀 Technologies
 
@@ -19,9 +19,8 @@ The Nft Marketplace Simulator is a simple MVP (Minimum Viable Product) for a car
     ├── database
     src
     ├── controllers
-    │    ├── cardController.ts
     │    ├── userController.ts
-    │    ├── offerController.ts
+    │    
     ├── routes
     │    ├── all app routes
     ├── test

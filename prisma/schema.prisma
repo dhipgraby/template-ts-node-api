@@ -7,22 +7,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Card {
-  id    Int    @id @default(autoincrement())
-  name  String
-  owner Int
-  price Float  
-}
-
-model Offer {
-  id       Int         @id @default(autoincrement())
-  cardId   Int
-  buyerId  Int
-  sellerId Int
-  price    Float
-  status   String @default("pending")
-}
-
 model User {
   id               Int      @id @default(autoincrement())
   username         String   @unique

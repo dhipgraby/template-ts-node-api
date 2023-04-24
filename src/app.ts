@@ -20,9 +20,6 @@ const swaggerSpec = loadSwagger();
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Serve static files
-app.use(express.static(path.join(__dirname, '..', 'swagger-ui')));
-
 (process.env.RUN_PROD_ENV === "true") ? loadApiEndpoints(app) : loadTestApiEndpoints(app)
 
 export default app;
