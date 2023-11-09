@@ -24,4 +24,16 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
   res.status(201).send({ message: "User registered successfully", user: createdUser });
 };
 
+export const getUserById = async (req: Request, res: Response): Promise<void> => {
+  const userId = parseInt(req.params.userId, 10);
+
+  const user = await userStorage.getUserById(userId);
+  if (!user) {
+    res.status(404).send({ message: "User not found" });
+    return;
+  }
+
+  res.status(200).send({ user });
+};
+
 export { User, userStorage };
